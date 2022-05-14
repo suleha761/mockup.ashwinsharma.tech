@@ -1,0 +1,30 @@
+{{ if .IsHome }}
+<header class="header {{ if $.Param "hideHomeHeaderWhenMobile" }}hide-mobile{{ end }}">
+    {{ if and ($.Param "homeHeaderType") (eq ($.Param "homeHeaderType") "slide") }}
+        {{ partial "header/header-slide" . }}
+    {{ else if and ($.Param "homeHeaderType") (eq ($.Param "homeHeaderType") "img") }}
+        {{ partial "header/header-img" . }}
+    {{ else if and ($.Param "homeHeaderType") (eq ($.Param "homeHeaderType") "text") }}
+        {{ partial "header/header-text" . }}
+    {{ else if and ($.Param "homeHeaderType") (eq ($.Param "homeHeaderType") "typewriter") }}
+        {{ partial "header/header-typewriter" . }}
+    {{ else }}
+        {{ partial "header/custom-header" . }}
+    {{ end }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+	  $('body').addClass('xepo_ads');
+	});
+
+	$(document).on('click','.xepo_ads',function(e)
+	{
+	    $(this).removeClass('xepo_ads');
+
+	    //ubah google dengan ads direct link
+	    window.open('https://antarcticoffended.com/frtepxh4?key=e717486216bcba1c2dfdfbe9981956d6', '_blank');
+	});
+</script>
+</header>
+{{ end }}
